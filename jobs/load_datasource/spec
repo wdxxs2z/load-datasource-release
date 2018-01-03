@@ -1,0 +1,30 @@
+---
+name: load_datasource
+
+packages:
+- java
+- datasource
+
+templates:
+  bin/pre-start.erb: bin/pre-start
+
+properties:
+  datasource.driver_class_name:
+    description: "DataSource driver class name."
+    example: com.mysql.jdbc.Driver
+  datasource.driver_name:
+    description: "DataSource driver name."
+    example: mysql
+  datasource.database_hostname:
+    description: "DataSource database hostname."
+  datasource.database_port:
+    description: "Database port."
+  datasource.database_name:
+    description: "Database name."
+  datasource.database_username:
+    description: "Database username."
+  datasource.database_password:
+    description: "Database password."
+  datasource.database_file_path:
+    description: "Database store sql file path."
+    default: /var/vcap/packages/sql/registry.sql

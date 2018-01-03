@@ -1,0 +1,8 @@
+---
+name: datasource
+
+dependencies:
+- java
+
+files:
+  - datasource/load-datasource.jar

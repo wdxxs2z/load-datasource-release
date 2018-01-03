@@ -1,0 +1,9 @@
+---
+java/openjdk-1.8.0_141.tar.gz:
+  object_id: c4fcc6d7-6e1c-404e-99ec-d522374986f9
+  sha: fef57709d2ca0b375a3879fe03df303afe24307f
+  size: 45927906
+datasource/load-datasource.jar:
+  object_id: 3ce754c8-95b8-466b-859f-88d969731ff3
+  sha: 10abc4d7409d51aa4f23c901f2b062acd07dc20d
+  size: 9230714
