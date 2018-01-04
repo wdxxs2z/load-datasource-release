@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: ${DRIVER_CLASS_NAME:com.mysql.jdbc.Driver}
+    url: jdbc:${DRIVER_NAME:mysql}://${DATABASE_HOST:127.0.0.1}:${DATABASE_PORT:3306}/${DATABASE_NAME:example}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:changeme}
+    sql-script-encoding: utf-8
+    schema:
+    - ${DATABASE_FILE_PATH:template.sql}
