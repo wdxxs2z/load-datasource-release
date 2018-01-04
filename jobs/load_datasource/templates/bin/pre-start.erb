@@ -38,6 +38,8 @@ get_datasource_properties(){
 
   <% if_p("datasource.database_file_path") do |database_file_path| %>
     export DATABASE_FILE_PATH=<%= database_file_path %>
+  <% else %>
+    export DATABASE_FILE_PATH=/var/vcap/jobs/load_datasource/config/template.sql
   <% end %>
 }
 
