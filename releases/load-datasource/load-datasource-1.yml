@@ -1,0 +1,22 @@
+---
+packages:
+- name: java
+  version: 381efed6b60b74d28ac69e9287c902ae28ad8082
+  fingerprint: 381efed6b60b74d28ac69e9287c902ae28ad8082
+  sha1: 41bc0539b097e853b698e2ba90565e9596d82c50
+  dependencies: []
+- name: datasource
+  version: 6607ae6af58eab8d8a8d16bba8bc624662194ebc
+  fingerprint: 6607ae6af58eab8d8a8d16bba8bc624662194ebc
+  sha1: 223de3a14e87ad1e66305befcd94a67e7bc0f709
+  dependencies:
+  - java
+jobs:
+- name: load_datasource
+  version: 84e6fda31979ba0b56e021851b024ee446af0659
+  fingerprint: 84e6fda31979ba0b56e021851b024ee446af0659
+  sha1: 95d3de9a8030b1817853d5143a99bd8945730a1d
+commit_hash: e4a20a84
+uncommitted_changes: true
+name: load-datasource
+version: '1'
