@@ -1,4 +1,6 @@
 # abort script on any command that exits with a non zero value
 set -e
 
-tar zxvf openjdk-1.8.0_141.tar.gz 
+tar zxvf java/openjdk-1.8.0_141.tar.gz
+
+cp -a ./* $BOSH_INSTALL_TARGET

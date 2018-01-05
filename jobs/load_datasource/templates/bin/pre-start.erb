@@ -2,43 +2,45 @@
 
 set -e
 
-JAVA_HOME=/home/vcap/packages/java
-PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME=/var/vcap/packages/java
+export PATH=$JAVA_HOME/bin:$PATH
 JAR_FILE_PATH=/var/vcap/packages/datasource
 
 get_datasource_properties(){
 
-  <% if_p("datasource.driver_class_name") do |driver_class_name| %>
+  <% if_p("load_datasource.driver_class_name") do |driver_class_name| %>
     export DRIVER_CLASS_NAME=<%= driver_class_name %>
   <% end %>
 
-  <% if_p("datasource.driver_name") do |driver_name| %>
+  <% if_p("load_datasource.driver_name") do |driver_name| %>
     export DRIVER_NAME=<%= driver_name %>
   <% end %>
 
-  <% if_p("datasource.database_hostname") do |database_hostname| %>
-    export DATABASE_HOST=<%= datasource.database_hostname %>
+  <% if_p("load_datasource.database_hostname") do |database_hostname| %>
+    export DATABASE_HOST=<%= database_hostname %>
   <% end %>
 
-  <% if_p("datasource.database_port") do |database_port| %>
-    export DATABASE_PORT=<%= datasource.database_port %>
+  <% if_p("load_datasource.database_port") do |database_port| %>
+    export DATABASE_PORT=<%= database_port %>
   <% end %> 
 
-  <% if_p("datasource.database_name") do |database_name| %>
+  <% if_p("load_datasource.database_name") do |database_name| %>
     export DATABASE_NAME=<%= database_name %>
   <% end %>
   
-  <% if_p("datasource.database_username") do |database_username| %>
+  <% if_p("load_datasource.database_username") do |database_username| %>
     export DATABASE_USERNAME=<%= database_username %>
   <% end %>
   
-  <% if_p("datasource.database_password") do |database_password| %>
+  <% if_p("load_datasource.database_password") do |database_password| %>
     export DATABASE_PASSWORD<%= database_password %>
   <% end %>
 
-  <% if_p("datasource.database_file_path") do |database_file_path| %>
+  <% if_p("load_datasource.database_file_path") do |database_file_path| %>
     export DATABASE_FILE_PATH=<%= database_file_path %>
-  <% end.else do %>
+  <% end %>
+
+  <% if_p("load_datasource.sql") %>
     export DATABASE_FILE_PATH=/var/vcap/jobs/load_datasource/config/template.sql
   <% end %>
 }

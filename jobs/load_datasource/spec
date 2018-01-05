@@ -10,25 +10,25 @@ templates:
   config/template.sql.erb: config/template.sql
 
 properties:
-  datasource.driver_class_name:
+  load_datasource.driver_class_name:
     description: "DataSource driver class name."
     example: com.mysql.jdbc.Driver
-  datasource.driver_name:
+  load_datasource.driver_name:
     description: "DataSource driver name."
     example: mysql
-  datasource.database_hostname:
+  load_datasource.database_hostname:
     description: "DataSource database hostname."
-  datasource.database_port:
+  load_datasource.database_port:
     description: "Database port."
-  datasource.database_name:
+  load_datasource.database_name:
     description: "Database name."
-  datasource.database_username:
+  load_datasource.database_username:
     description: "Database username."
-  datasource.database_password:
+  load_datasource.database_password:
     description: "Database password."
-  datasource.database_file_path:
+  load_datasource.database_file_path:
     description: "Database store sql file path."
     example: /var/vcap/packages/sql/registry.sql
-  datasource.sql:
+  load_datasource.sql:
     description: "Write some simple sql."
     default: ""
