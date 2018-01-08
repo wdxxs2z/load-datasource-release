@@ -33,15 +33,13 @@ get_datasource_properties(){
   <% end %>
   
   <% if_p("load_datasource.database_password") do |database_password| %>
-    export DATABASE_PASSWORD<%= database_password %>
+    export DATABASE_PASSWORD=<%= database_password %>
   <% end %>
 
   <% if_p("load_datasource.database_file_path") do |database_file_path| %>
     export DATABASE_FILE_PATH=<%= database_file_path %>
-  <% end %>
-
-  <% if_p("load_datasource.sql") %>
-    export DATABASE_FILE_PATH=/var/vcap/jobs/load_datasource/config/template.sql
+  <% end.else do %>
+    export DATABASE_FILE_PATH=file:/var/vcap/jobs/load_datasource/config/template.sql
   <% end %>
 }
 
